@@ -158,6 +158,7 @@ h5 {
 p {
   line-height: 1.4;
 }
+/*END*/
 
 html {
   font-size: 62.5%;
@@ -167,6 +168,7 @@ html {
   margin: 5%;
 }
 
+/*------------START header-----------*/
 header {
   display: flex;
   justify-content: space-between;
@@ -183,7 +185,7 @@ nav {
 }
 
 nav a {
-  width: 20%;
+  width: 18%;
   height: 50%;
   text-decoration: none;
   color: #1b1209;
@@ -200,6 +202,7 @@ nav a {
   width: 100%;
   margin: 3% auto;
 }
+/*----------------END*/
 
 .container {
   width: 800px;
@@ -207,6 +210,7 @@ nav a {
   font-weight: 600;
 }
 
+/*----------------START top-content--------*/
 .top-content {
   display: flex;
   flex-wrap: wrap;
@@ -226,7 +230,9 @@ nav a {
   font-weight: 300;
   padding: 2%;
 }
+/*------------END*/
 
+/*----------------START bottom-content----------*/
 .bottom-content {
   margin-bottom: 5%;
   border-bottom: 1px dashed #1b1209;
@@ -256,6 +262,19 @@ nav a {
   justify-content: center;
 }
 
+.button {
+  /*buttons will not be used until max-width 500px*/
+  display: none;
+  width: 18%;
+  height: 50px;
+  margin: 2% 2%;
+  font-size: 1.4rem;
+  color: #1b1209;
+  background-color: tan;
+}
+/*----------------END*/
+
+/*-------------------START Footer----------------*/
 footer {
   width: 100%;
   background: #1b1209;
@@ -274,7 +293,9 @@ footer nav a {
   color: white;
   text-decoration: none;
 }
+/*--------------------END*/
 
+/*--------START Media Query max-width 800px----------*/
 @media (max-width: 800px) {
   .container {
     width: 100%;
@@ -289,3 +310,55 @@ footer nav a {
     margin: 0 auto;
   }
 }
+/*-----------END*/
+
+/*-----------START Media query max-width 500px----*/
+@media (max-width: 500px) {
+  .container header {
+    flex-wrap: wrap;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    padding: 3% 0;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 2% 0;
+    font-size: 2.8rem;
+    border-bottom: 1px solid black;
+  }
+
+  .top-content {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /*added this height to constrain the child container '.text-container'*/
+    height: 300px;
+    text-align: center;
+  }
+
+  .top-content .text-container {
+    width: 100%;
+    height: 45%;
+  }
+
+  .bottom-content .prices .prices {
+    display: none;
+  }
+
+  .button {
+    display: initial;
+  }
+
+  footer nav a {
+    border-bottom: 1px solid white;
+  }
+  footer nav a:first-child {
+    border-top: 1px solid white;
+  }
+}
+/*--------------END*/
